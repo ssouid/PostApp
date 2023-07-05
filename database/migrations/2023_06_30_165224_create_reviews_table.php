@@ -19,7 +19,7 @@ return new class extends Migration
         $table->nullableMorphs('review');
         $table->boolean('is_published');
         $table->foreignId('user_id')->constrained('users');
-        $table->tinestamps();
+        $table->timestamps();
         $table->softDeletes();
       
         });

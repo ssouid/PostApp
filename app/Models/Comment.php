@@ -15,6 +15,8 @@ class Comment extends Model
         'user_id',
         
     ];
+
+
     
     function user()  {                                    
 

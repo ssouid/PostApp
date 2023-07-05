@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
+use App\Models\User;
 use Dotenv\Util\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -18,17 +20,17 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-                'title'        => fake()->name(),
-            'cover image'  =>  fake()-> imageUrl(),
-            'description'  =>  fake()->paragraph(),
-            'is paid'      => fake()->boolean(),
-            'price'        =>fake()->randomFloat(2,0,500),
-            'start_at'     => fake()->now(),
-            'end_at'       => fake()->dateThisMonth(),
-            'category_id'  =>  1,
-            'user_id'      =>1,
-            'status'       =>  fake()->randomElement(['approved','pending','rejected' ]),
-            
+            'title'        => fake()->name(),
+            'slug'  =>  fake()->slug(),
+            'seo_keywords'  =>  fake()->paragraph(1),
+            'seo_description'      => fake()->paragraph(),
+            'description'        => fake()->paragraph(random_int(25, 50)),
+            'image_thumbnail'     => fake()->imageUrl(),
+            'image_cover'       => fake()->imageUrl(),
+            'is_published'  =>  fake()->boolean(),
+            'created_by_id'      => User::query()->inRandomOrder()->first()?->id,
+            'category_id'       =>  Category::query()->inRandomOrder()->first()?->id,
+
         ];
     }
 }

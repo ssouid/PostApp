@@ -15,8 +15,9 @@ return new class extends Migration
       
         $table->enum('user_type', ['admin', 'user'])->default('user')->after('remember_token');
          $table->enum('status', ['approved', 'pending', 'rejected'])->default('pending')->after ('remember_token');
+         $table->enum('gender', ['male', 'female'])->default('male')->after ('remember_token');
          $table->text('bio')->nullable()->after('remember_token');
-        $table->string('job_title')->nullable()->after ('remember_token');
+         $table->string('job_title')->nullable()->after ('remember_token');
         $table->softDeletes();  
 
         });

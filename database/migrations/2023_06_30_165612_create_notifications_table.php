@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('notifiable_id');
             $table->string('icon');
             $table->foreignId('user_id')->constrained('users');
-            $table->tinestamps();
+            $table->timestamps();
             $table->softDeletes();
         });
     }

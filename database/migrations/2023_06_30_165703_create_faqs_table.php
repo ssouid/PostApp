@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('text');
             $table->integer('position');
             $table->boolean('is_published');
-            $table->tinestamps();
+            $table->timestamps();
             $table->softDeletes();
         });
     }
