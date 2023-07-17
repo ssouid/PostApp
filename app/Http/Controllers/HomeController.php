@@ -13,10 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $title = __('Home page');
-
-
-        return view('front.home.index', compact('title') );
+        return view('front.home.index');
     }
 
 

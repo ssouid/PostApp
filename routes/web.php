@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Symfony\Contracts\Service\Attribute\Required;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-route::get('/', [HomeController::class,'index'] ) -> name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-route::resource('posts', PostController::class);
-                        
-//route::view('about', 'front.about.index') -> name('about');
 
+
+
+Require 'auth.php';
